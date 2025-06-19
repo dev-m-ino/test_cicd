@@ -34,12 +34,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: NCP SSH Login and Docker Image pull and run
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.NCP_HOST }}
           username: ${{ secrets.NCP_USERNAME }}
           password: ${{ secrets.NCP_PASSWORD }}
-          key: | ${{ secrets.NCP_KEY }}
+          key: ${{ secrets.NCP_KEY }}
           port: ${{ secrets.NCP_PORT }}
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
