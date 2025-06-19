@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.NCP_KEY }}
           port: ${{ secrets.NCP_PORT }}
           script: |
-            docker --version
+            ls -l /usr/bin/containerd-shim-runc-v2
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker stop ${{ vars.APP_NAME }}
             docker rm -f ${{ vars.APP_NAME }}
